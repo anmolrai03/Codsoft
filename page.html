@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+
+    <!-- CSS LINKING -->
+
+    <!-- <link rel="stylesheet" href="Designs/header.css">
+    <link rel="stylesheet" href="Designs/page.css">
+    <link rel="stylesheet" href="Designs/middle.css">
+    <link rel="stylesheet" href="Designs/footer.css"> -->
+
+    <!-- FONT AND ICON LINKING -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Edu+SA+Beginner:wght@400;500;700&family=REM:ital,wght@1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        /* Page */
+        body{
+        font-family: 'Cinzel', serif;
+        font-family: 'Edu SA Beginner', cursive;
+        font-family: 'REM', sans-serif;
+        margin: 0;
+        background: linear-gradient(to top, rgba(2,0,36,1) 0%, rgb(59, 59, 173) 51%, rgb(28, 201, 236) 100%);
+        }
+
+        /* header */
+        .head{
+        display: flex;
+        position: relative;
+        flex: 1;
+        height: 850px;
+        background-image: url(https://i.pinimg.com/originals/42/eb/2c/42eb2cb835d0237907322f94cb08e1fc.jpg);
+        background-size: cover;
+        background-position: center;
+        align-items: center;
+        border-bottom-left-radius: 70px;
+        border-bottom-right-radius: 70px;
+        border: 4px solid gold;
+        border-bottom: 2px solid gold;
+
+        }
+
+        /*LOGO CSS IS ALSO WRITTEN IN ENDING SECTION OF FOOTER BLOCK*/
+
+        .head .logo img{
+        width: 50px;
+        height: 50px;
+        margin-right: 12px;
+        }
+
+        .head .logo{
+        display: flex;
+        position: absolute;
+        top: 10px;
+        left: 35px;
+        align-items: center;
+        transition: border 0.2s, color 0.3s ease-in-out;
+        }
+
+        .head .logo:hover h3{
+        color: gold;
+        }
+
+        /* WRITTEN CONTENT */
+
+        .head-content
+        {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        position: absolute;
+        top: 25%;
+        left: 20%;
+        color: white;
+        width: 250px;
+        height: 400px;
+        border-radius: 20px;
+        line-height: 2;
+        padding: 4px 15px;
+        background-color: black;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        cursor: pointer;
+        transition: height 0.6s,width 1s,border-radius 0.15s,border 0.5s  ease-in-out;
+        }
+
+        .head-content:hover{
+        border-radius: 30px;
+        width: 400px;
+        height: 300px;
+        padding: 6px 15px;
+        color: gold;
+        border: 5px solid gold;
+        }
+
+        .akatsuki{
+        text-decoration: line-through;
+        }
+
+        /* MENU-BAR */
+
+        .menu-bar{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        width: 400px;
+        align-items: top;
+        top: 30px;
+        right: 80px;
+        justify-content: space-between;
+        color: white;
+        cursor: pointer;
+        text-decoration: wavy;
+        }
+
+        .Contact-icon,.Share-icon,.Download-icon,.Blog-icon{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;   
+        }
+
+        .tooltip{
+        display: flex;
+        position: absolute;
+        background-color: white;
+        border: 4px solid gold;
+        box-shadow: 10px 10px 10px rgb(5, 29, 52);
+        color: black;
+        padding: 3px 6px;
+        font-size: 13px;
+        opacity: 0;
+        transition: opacity ease-in 0.3s;
+        bottom: -38px;
+        border-radius: 8px;
+        pointer-events: none;
+        }
+
+        .Contact-icon:hover .tooltip,.Share-icon:hover .tooltip,.Download-icon:hover .tooltip,.Blog-icon:hover .tooltip{
+        opacity: 1;
+        }
+
+/* footer */
+        .footer{
+            display: flex;
+            flex-direction:  row;
+            column-gap: 2cm;
+            align-items: start;
+            justify-content: center;
+            padding: 50px 40px;
+            margin-bottom: 2cm;
+            border-top: 1px solid gold;   
+        }
+
+        /* LEFT FOOTER CSS */
+
+        .footer-left{
+            display: flex;
+            flex-direction: column;
+            row-gap: 1cm;
+            margin-right: 2%;
+        }
+
+        .left-footer-tray{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            color: white;
+            height: 40px;
+            width: 150px;
+            padding: 2px 12px 2px 0px;
+            cursor: pointer;
+            border-right: 2px dashed gold;
+            transition: border 0.2s,color 0.2s ease-in-out;
+        }
+        .left-footer-tray:hover{
+            border: 3px dotted gold;
+            border-radius: 6px;
+            color: gold;
+        }
+
+        /* MIDDLE FOOTER CSS */
+
+        .footer-middle{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            padding: 0px 10px 2px 10px;
+        }
+
+        .heading-footer-middle,.heading-footer-right{
+            display: flex;
+            height: 40px;
+            width: 150px;
+            padding: 2px 12px 4px 0px;
+            justify-content: end;
+            align-items: center;
+            color: white;
+            border-right: 2px dashed gold;
+            padding: 0px 10px 2px 0px;
+            cursor: pointer;
+            transition: border 0.2s,color 0.2s ease-in-out;
+        }
+
+        .heading-footer-middle:hover,.heading-footer-right:hover{
+            border: 3px dotted gold;
+            border-radius: 6px;
+            color: gold;
+        }
+
+        .media-tray{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: right;
+            column-gap: 15px;
+            margin-left: 25px;
+            top: 40px;
+            position: relative;
+            padding: 10px;
+            border-right: 2px dashed gold;
+            cursor: grab;
+        }
+
+        .forhover{
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-tooltip{
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            bottom: -40px;
+            color: white;
+            border-radius: 5px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.7s,border 1s,padding 1s;
+        }
+
+        .forhover:hover .social-tooltip{
+            opacity: 1;
+            border: 2px solid gold;
+            padding: 4px 8px;
+        }
+
+        /* RIGHT FOOTER CSS */
+
+        .footer-right{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+
+        /* HEADING FOOTER RIGHT CSS IS IN LEFT FOOTER BLOCK */
+
+        .mail-box{
+            display: flex;
+            flex-direction: column;
+            margin-top: 1cm;
+            border-right: 2px dashed gold;
+            justify-content: center;
+        }
+
+        /* MAIL BOX CSS */
+
+        .mail-box{
+            display: flex;
+            justify-content: center;
+            padding: 4px 8px 2px 0px;
+        }
+
+        .mail-box input{
+            padding: 4px 8px;
+            border: 2px solid gold;
+            border-radius: 10px;
+            height: 1cm;
+            width: 6cm;
+            margin-bottom: 10px;
+        }
+
+        .mail-box button{
+            height: 1cm;
+            width: 2cm;
+            border-radius: 0.5cm;
+            border: 2px solid white;
+            color: white;
+            margin-left: 2cm;
+            font-weight: 800;
+            background-color:transparent;
+            cursor: pointer;
+            transition: border 0.5s,width 0.7s,height 0.7s,padding 0.5s,border-radius 0.7s ease-in-out;
+        }
+
+        .mail-box button:hover{
+            border: 4px dotted gold;
+            color: gold;
+            padding: 6px 10px;
+            height: 1.25cm;
+            width: 2.25cm;
+            border-radius: 0cm;
+        }
+
+        .mail-box p{
+            color: white;
+            margin: 0px;
+            padding-left: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .footer-contact-number{
+            color: white;
+            display: flex;
+            margin-top: 1cm;
+            border-right: 2px dashed gold;
+            padding: 0px 13px 2px 10px;
+            cursor: pointer;
+            transition: border 0.3s;
+            border-radius: 8px;
+        }
+
+        .footer-contact-number:hover{
+            border: 2px dotted gold;
+            color: gold;
+        }
+
+        /* ENDING LINES */
+
+        .ending{
+            display: block;
+            position: relative;
+            text-align: center;
+            color: white;
+            font-weight: 100;
+            cursor: pointer;
+            border-top: 1px solid gold;
+            margin-bottom: 50px;
+        }
+
+        .ending h4:hover ,.ending h5:hover{
+            color: gold;
+        }
+
+        .logo img{
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 52%;
+            border: 3px solid;
+            transition: border 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .logo img:hover {
+            border: 6px solid gold;
+        }
+
+        /* middle */
+        .middle-division{
+        display: flex;
+        flex-direction: row;
+        column-gap: 2rem;
+        background-color: black;
+        color: white;
+        height: 500px;
+        padding: 10px 20px;
+        padding-left: 100px;
+        background-color: rgb(15, 15, 15);
+        /* background-image: url('https://i.pinimg.com/originals/32/59/f4/3259f44205a38bdad491c4df10ff4ae8.gif'); */
+        /* background-image: url("https://i.pinimg.com/originals/02/94/60/029460dc44dbdfea92b1e92cab28912b.gif"); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left;
+        border-radius: 100px;
+        border: 2px solid gold;
+        margin-top: 1px;
+        }
+
+        /* Left side of middle block */
+
+        .left-side{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        width: 50%;
+        padding: 6px 12px;
+        }
+
+        /* BLOCK 1 SEARCH CSS */
+
+        .search-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(34, 30, 30);
+        height: 20%;
+        border-radius: 11px;
+        border: 2px solid gold;
+        }
+
+        .search{
+        height: 40%;
+        width: 68%;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding: 2px 6px 2px 30px;
+        }
+
+        .btn{
+        height: 48%;
+        background-color: rgb(129, 126, 126);
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding: 2px 8px 2px 9px;
+        cursor: pointer;
+
+        }
+
+        /* BLOCK 2 IMAGE CSS */
+
+        .image-box{
+        height: 70%;
+        border-radius: 15px;
+        cursor: pointer;
+        }
+
+        .image-box img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover ;
+        object-position: top;
+        border-radius: 15px;
+        transition: height 0.5s,width 0.5s,border 0.5s ease-in-out;
+        }
+
+        .image-box:hover img{
+        height: 110%;
+        width: 90%;
+        border: 3px solid gold;
+        z-index: 1;
+        }
+
+        /* RIGHT SIDE OF MIDDLE BLOCK */
+
+        .right-side{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 40%;
+        padding: 6px 12px;
+        }
+
+        /* BLOCK 3 LOGO CSS */
+
+        .logo-box{
+        height: 45%;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        }
+
+        .logo-box img{
+        height: 90%;
+        width: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+        object-position: center;
+        transition: height 0.5s,width 0.5s,border 0.5s ease-in-out;
+        }
+
+        .logo-box:hover img{
+        height: 110%;
+        width: 110%;
+        object-position: center;
+        object-fit: cover;
+        border: 3px solid gold;
+
+        }
+
+        /* BLOCK 4 NAME BOX CSS*/
+
+        .name-box{
+        display: flex;
+        background-color: rgb(34, 30, 30);;
+        height: 15%;
+        border-radius: 15px;
+        text-align: left;
+        line-height: 30px;
+        padding: 6px 0px 0px 12px;
+        border: 2px solid gold;
+        }
+
+        .name-box p,.about-box p{
+        margin: 0px;
+        font-size: 15px;
+        font-size: 20px;
+        cursor: pointer;
+
+        }
+
+        .name-box p span,.about-box p span{
+        color: gold;
+        font-size: 13px;
+        font-style: italic;
+        cursor: pointer;
+
+        }
+
+        /*BLOCK 5 ABOUT BOX CSS */
+
+        .about-box{
+        background-color: rgb(34, 30, 30);
+        height: 30%;
+        border-radius: 15px;
+        text-align: left;
+        line-height: 30px;
+        padding: 6px 0px 0px 12px;
+        border: 2px solid gold;
+        }
+    </style>
+</head>
+<body>
+
+<!--HEAD BLOCK OF THE PAGE-->
+
+    <header class="head">
+
+    <!--LOGO  -->
+
+        <div class="logo">
+            <img src="https://i.pinimg.com/564x/d2/a2/8d/d2a28d28a4faa1a602e5906e9e3b5429.jpg" alt="Logo">
+            <h3 style="cursor: pointer;">theuchihas.com</h3>
+        </div>
+
+    <!-- MENU BAR -->
+
+        <div class="menu-bar">
+            <div class="Contact-icon">
+                <i class="fa fa-address-book-o" style="font-size:26px; color: black"></i>
+                <div class="tooltip">
+                    Contact
+                </div>
+            </div>
+            <div class="Share-icon">
+                <i class="fa fa-send-o" style="font-size:26px;color: black;"></i>
+                <div class="tooltip">
+                    Share
+                </div>
+            </div>
+            <div class="Download-icon">
+                <i class="fa fa-download" style="font-size:26px;color: black;"></i>
+                <div class="tooltip">
+                    Download
+                </div>
+            </div>
+            <div class="Blog-icon">
+                <i class="fa fa-book" style="font-size:26px;color: black;"></i>
+                <div class="tooltip">
+                    Blog
+                </div>
+            </div>
+        </div>
+
+        <div class="head-content">
+            <p>
+                <h1>Itachi Uchiha</h1><br>
+                An elite shinobi of <span class="akatsuki">Akatsuki </span>leaf.<br>
+                He became an Anbu black ops captain at the age of 13. <br>
+                The God of Genjutsu. Probably you are under his Genjutsu.
+            </p>
+        </div>    
+    </header>
+
+<!--MIDDLE BLOCK OF THE PAGE -->
+
+    <main class="middle-division">
+
+        <!-- LEFT SIDE OF MIDDLE BLOCK -->
+
+        <div class="left-side">
+            <div class="search-box">
+                <input class="search" type="text" placeholder="Madara Uchiha">
+                <button class="btn">
+                    <i class="fa fa-search" style="font-size:24px; color: white;"></i>
+                </button>
+            </div>
+            <div class="image-box">
+                <img src="https://i.pinimg.com/564x/65/a4/63/65a463fea6823a0c91ef09d03a078c22.jpg">
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE OF THE MIDDLE BLOCK -->
+
+        <div class="right-side">
+            <div class="logo-box">
+                <img src="https://i.pinimg.com/564x/d2/a2/8d/d2a28d28a4faa1a602e5906e9e3b5429.jpg" alt="Logo">
+            </div>
+            <div class="name-box">
+                <p>
+                    <span>WEBSITE</span>
+                    <br>theuchihas.com
+                </p>
+            </div>
+            <div class="about-box">
+                <p>
+                    <span>ABOUT</span>
+                    <br>This website contains details about the <b><i>Uchicha-clan </i></b>and its members.
+                    It also has information about their Visual Prowess.
+                </p>
+            </div>
+        </div>
+    </main>
+
+<!--FOOTER OF THE PAGE -->
+
+    <footer class="footer">
+
+        <!--LEFT FOOTER  -->
+
+        <div class="footer-left">
+            <div class="left-footer-tray">
+                Home
+            </div>
+            <div class="left-footer-tray">
+                About Us 
+            </div>
+            <div class="left-footer-tray">
+                Help and Support
+            </div>
+            <div class="left-footer-tray">
+                Cookies
+            </div>
+        </div>
+
+        <!--MIDDLE FOOTER -->
+
+        <div class="footer-middle">
+            <div class="heading-footer-middle">
+                <h4>Social Media </h4>
+            </div>
+            
+            <div class="media-tray">
+                <div class="forhover">
+                    <i class="fa fa-facebook-square" style="font-size: 26px; color: gold;"></i>
+                    <div class="social-tooltip">
+                        Facebook
+                    </div>
+                </div>
+                
+                <div class="forhover">
+                    <i class="fa fa-instagram" style="font-size:26px ;color: gold;"></i>
+                    <div class="social-tooltip">
+                        Instagram
+                    </div>
+                </div>
+
+                <div class="forhover">
+                    <i class="fa fa-linkedin-square" style="font-size:26px ;color: gold;"></i>
+                    <div class="social-tooltip">
+                        Linkdin
+                    </div>
+                </div>
+
+                <div class="forhover">
+                    <i class="fa fa-pinterest-square" style="font-size:26px ;color: gold;"></i>
+                    <div class="social-tooltip">
+                        Pinterest
+                    </div>
+                </div>
+
+                <div class="forhover">
+                    <i class="fa fa-twitter-square" style="font-size:26px ;color: gold;"></i>
+                    <div class="social-tooltip">
+                        Twitter
+                    </div>
+                </div>
+
+                <div class="forhover">
+                    <i class="fa fa-telegram" style="font-size:26px ;color: gold;"></i>
+                    <div class="social-tooltip">
+                        Telegram
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER RIGHT -->
+
+        <div class="footer-right">
+            <div class="heading-footer-right">
+                CONTACT US
+            </div>
+            <div class="mail-box">
+                <p><i>EMAIL :</i></p>
+                <input type="text" placeholder="Your Email here">
+                <button>Submit</button>
+            </div>
+            <div class="footer-contact-number">
+                <p>
+                    <h4 style="line-height: 0.8cm;">Telephone:  +19-22546932<br>
+                    Email :  tobiuchiha@mail.com</h4>
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+<!--ENDING DIVISION OF THE PAGE-->
+
+    <div class="ending">
+        <h4>theuchihas is a page to provide details about the uchihas in NarutoVerse. The contents are taken from the account of Lord Second Tobirama.</h4>
+        <h5>Copyright 2023-2024 by Google LLC. All rights reserved.</h5>
+        <div class="logo">
+            <img src="https://i.pinimg.com/564x/d2/a2/8d/d2a28d28a4faa1a602e5906e9e3b5429.jpg" alt="Logo">
+        </div>
+    </div>
+</body>
+</html>
