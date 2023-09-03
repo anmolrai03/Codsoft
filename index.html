@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- LINKING CSS  -->
+        <!-- <link rel="stylesheet" href="Design/Page-1/header.css">
+        <link rel="stylesheet" href="Design/Page-1/navigation.css">
+        <link rel="stylesheet" href="Design/Page-1/main.css">
+        <link rel="stylesheet" href="Design/general.css">
+        <link rel="stylesheet" href="Design/Page-2/cards.css"> -->
+
+    <!-- DOWNLOADING FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Edu+SA+Beginner:wght@400;500;700&family=REM:ital,wght@1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Edu+SA+Beginner:wght@400;500;700&family=Mr+Dafoe&family=REM:ital,wght@1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Edu+SA+Beginner:wght@400;500;700&family=Mr+Dafoe&family=REM:ital,wght@1,400;1,500;1,700&family=Roboto:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+
+        <!-- ICONS LINKING -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+        <style>
+
+            .detail-box{
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            align-items: center;
+            /* justify-content: space-around; */
+            top: 6cm;
+            right: 3.5cm;
+            width: 24cm;
+            height: 12cm;
+            padding: 0px 18px;
+            /* white-space: pre-wrap; */
+            border-radius: 30px;
+            /* border: 1px solid; */
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+            }
+
+            .info-container{
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            padding: 0px 18px 0px 5px;
+            /* flex: 1; */
+            }
+            .info-container h2{
+            cursor: pointer;
+            margin: 0;
+            line-height: 2;
+            }
+            .info-container p{
+            cursor: pointer;
+            }
+
+            .info-container p span{
+            /* text-decoration: underline; */
+            background-color: rgb(110, 199, 255);
+            padding: 0px 3px;
+            }
+            .image-container{
+            display: flex;
+            position: relative;
+            /* align-items: center;
+            justify-content: center; */
+            width: 90%;
+            height: 90%;
+            /* border: 2px solid black; */
+            border-radius: 20px;
+            transition: all 1s;
+            }
+            .image-container img{
+            width: 1cm;
+            height: 2cm;
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            cursor: pointer;
+            transition: object-fit 0.15s,object-position 0.2s,height 1s,border-radius 0.2s ease-in-out;
+
+            /* FOR HOVER EFEECT */
+
+            }
+            .social-icons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            flex-direction: row;
+            column-gap: 1.1cm;
+            margin: 0;
+            bottom: 0;
+            height: 40%;
+            width: 100%;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            text-align: center;
+            background-color: white;
+            opacity: 0;
+            transition: opacity 1s,background-color 0.5s ease-in-out;
+            cursor: pointer;
+
+            }
+
+            .social-icons h4{
+            display: flex;
+            position: absolute;
+            top: -1cm;
+            padding: 2px 8px;
+            }
+            .social-icons div{
+            padding: 2px 5px;
+
+            }
+
+            .image-container:hover .social-icons{
+            opacity: 1;
+            /* background-color: aqua; */
+            background-color: rgb(129, 233, 172);
+            }
+            .image-container:hover img{
+            height: 60%;
+            object-fit: cover;
+            object-position: top;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            }
+            body{
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Cinzel', serif;
+            font-family: 'REM', sans-serif;
+            font-family: 'Edu SA Beginner', cursive;
+            margin: 0;
+            font-size: 30px;
+            margin-bottom: 1700px;
+            }
+            header{
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Cinzel', serif;
+            font-family: 'Edu SA Beginner', cursive;
+            font-family: 'Mr Dafoe', cursive;
+            /* font-size: 2cm; */
+            padding: 8px 0px;
+            color: black;
+            background-color: rgb(129, 233, 172);
+            display:  flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            right: 0;
+            left: 0;
+            top: 0;
+            transition: color 0.5s,background-color 0.5s ease-in-out;
+            }
+            header h1{
+            cursor: pointer;
+            margin: 0;
+            }
+            .Page-1{
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid; */
+            }
+            .navigation{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            align-items: center;
+            justify-content: space-around;
+            /* justify-content: center; */
+            padding: 4px 3px 4px 20px;
+            width: 6cm;
+            /* border-right: 2px solid; */
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+            bottom: 0;
+            top: 100px;
+            left: 0;
+            }
+            .menu-box{
+            width: 50%;
+            display: flex;
+            flex: row;
+            align-items: start;
+            justify-content: space-between;
+            border-radius: 6px;
+            padding: 8px 10px;
+            cursor: pointer;
+            outline: 2px solid;
+            background-color: whitesmoke;
+            transition: background-color 0.3s,border-radius 0.5s,width 0.5s,outline 1s,outline-offset 0.5s ease-in-out;
+            }
+
+            .menu-box:hover{
+            width: 100%;
+            outline-offset: 4px;
+            border-radius: 10px;
+            background-color: rgb(129, 233, 172);
+            }
+
+            .menu-box h4{
+            margin: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            }
+            .menu-box:hover h4{
+            opacity: 1;
+            }
+            .page-2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            /* border: 1px solid; */
+            bottom: -21.5cm;
+            width: 100%;
+            height: 600px;
+            row-gap: 1cm;
+            /* outline: 1px solid; */
+            margin-bottom: 200px;
+            /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
+
+            }
+            .heading-div{
+            display: flex;
+            justify-content: center ;
+            align-items: center;
+            /* padding: 5px 0px; */
+            width: 100%;
+            height: 2cm;
+            border: 2px solid;
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+            cursor: pointer;
+            }
+
+            .card-holder{
+            display: flex;
+            flex-direction: row;
+            margin-top: 2cm;
+            /* margin-bottom: 2cm; */
+            /* width: 4cm; */
+            /* border: 2px solid rebeccapurple; */
+            align-items: center;
+            justify-content: space-around;
+
+            /* border-bottom: 1px solid; */
+            }
+
+            .card{
+            width: 10cm;
+            height: 100%;
+            /* border-radius: 60%; */
+            display: flex;
+            /* flex-direction: row; */
+            position: relative;
+            /* outline: 2px solid; */
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            }
+            .card:hover{
+            border-radius: 6px;
+            /* outline: 2px solid ; */
+            }
+
+            .card img{
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            outline: 5px solid rgb(129, 233, 172);
+            outline-offset: 10px;
+            object-fit: cover;
+            object-position: center;
+            cursor: pointer;
+            transition: height 1s,object-fit 1s,object-position 1s,outline 0.5s,border-radius 1s ease-in-out ;
+            }
+            .below-content{
+            display: flex;
+            align-items: contain;
+            position: absolute;
+            bottom: 0;
+            height: 50%;
+            width: 100%;
+            opacity: 0;
+            align-items: center;
+            text-align: center;
+            /* padding: 0px 6px; */
+            background-color: rgb(129, 233, 172);
+            transition: opacity 0.5s, padding 0.5s,border-radius 0.5s ease-in-out ;
+            }
+
+            .card:hover img{
+            height: 50%;
+            border-radius: none;
+            outline: none;
+            object-fit: contain;
+            object-position: center;
+            } 
+            .card:hover .below-content{
+            padding: 2px 0px;
+            opacity: 1;
+            border-radius: 1cm;
+            }
+            .footer{
+            display: flex;
+            height: 5cm;
+            margin-top: 3cm;
+            text-align: center;
+            cursor: pointer;
+            border-top: 3px solid;
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+            }
+
+
+        </style>
+</head>
+
+<body>
+
+    <!-- page 1 -->
+
+    <div class="Page-1">
+        <!-- header section-->
+
+        <header><h1>anmolrai</h1></header>
+
+        <!-- navbar -->
+
+        <nav class="navigation">
+            <div class="menu-box">
+                <i class="fa fa-home" style="font-size:36px"></i>
+                <div>
+                    <h4>Home</h4>
+                </div>
+            </div>
+            <div class="menu-box">
+                <i class="fa fa-address-book-o" style="font-size:36px"></i>
+                <div>
+                    <h4>Contact</h4>
+                </div>
+            </div>
+            <div class="menu-box">
+                <i class="fa fa-bolt" style="font-size:36px"></i>
+                <div>
+                    <h4>Skills</h4>
+                </div>
+            </div>
+            <div class="menu-box">
+                <i class="fa fa-star-o" style="font-size:36px"></i>
+                <div>
+                    <h4>Achievement</h4>
+                </div>
+            </div>
+            <div class="menu-box">
+                <i class="fa fa-id-card-o" style="font-size:36px"></i>
+                <div>
+                    <h4>Resume</h4>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- main section -->
+
+        <main class="detail-box">
+            <div class="info-container">
+                <h2>HI , I AM ANMOL RAI.</h2>
+                <p>I am second year B.Tech student of CSE branch at <span>NIET Gr. Noida</span>. Currently pursuing my way through WebDevelopement.</p>
+            </div>
+            <div class="image-container">
+                <img src="https://i.pinimg.com/originals/2f/9e/58/2f9e5892ce78cee54efe6795179d5004.jpg" alt="image">
+                <div class="social-icons">
+                    <h4>Lets Connnect</h4>
+                    <!-- <i class="fa fa-instagram" style="font-size:36px;font-weight: 600;"></i>
+                    <i class="fa fa-telegram" style="font-size:36px;font-weight: 500;"></i>
+                    <i class="fa fa-linkedin" style="font-size:36px"></i> -->
+
+                    <!-- INSTA LINK -->
+                    <div class="Instagram">
+                        <a href="https://www.instagram.com/" target="_parent">
+                            <i class="fa fa-instagram" style="font-size:32px;font-weight: 600; color: black;"></i>
+                        </a>
+                    </div>
+
+                    <!-- TELEGRAM LINK -->
+                    <div class="Telegram">
+                        <a href="https://web.telegram.org/" target="_parent">
+                            <i class="fa fa-telegram" style="font-size:32px;font-weight: 600; color: black;"></i>
+                        </a>
+                    </div>
+
+                    <!-- LINKDIN LINK -->
+                    <div class="LinkDin">
+                        <a href="https://in.linkedin.com/" target="_parent">
+                            <i class="fa fa-linkedin" style="font-size:32px;font-weight: 600; color: black;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+        
+<!-- PAGE-2 -->
+        <div class="page-2">
+            <div class="heading-div"><h2>SKILLS</h2></div>
+            
+            <div class="card-holder">
+                <!-- Python card  -->
+                <div class="card" id="card-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" alt="Python image">
+                    <div class="below-content">
+                        <p><span>Have good knowledge of Python. 
+                            Totally aware of OOP's concept and its application.
+                        </span></p>
+                    </div>
+                </div>
+                <!-- HTML card  -->
+                <div class="card" id="card-1">
+                    <img src="https://img.freepik.com/premium-vector/html-5-minimal-flat-logo-design_582637-694.jpg" alt="html image">
+                    <div class="below-content">
+                        <p><span>Have good knowledge of HTML.Currently learning more of it.</span></p>
+                    </div>
+                </div>
+                
+                <!-- CSS Card  -->
+                <div class="card" id="card-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS">
+                    <div class="below-content">
+                        Got basic knowledge of CSS 
+                        I have made a YouTube front page and a Landing page with these basic properties.
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <h3>This page has been made only with the help of HTML ans CSS .So, the buttons won't respond as no JavaScript is being used.</h3>
+            </footer>
+        </div>           
+    </body>
+</html>
